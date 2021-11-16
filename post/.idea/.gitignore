@@ -6,4 +6,4 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-../post/development
+../post/development/local.env
