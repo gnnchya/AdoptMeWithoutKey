@@ -1,0 +1,10 @@
+AdoptMe
+- CRUD system
+- implement queue (do in application load balancer?)
+- separate between lost pet feed and adoption feed ( maybe two db or two table in one db )
+- using elasticsearch for filtering and searching algorithm and sync with dynamoDB or mongoDB
+- using dynamoDB or mongodb? > try to connect to dynamoDB through the AWS EC2
+- make the notification system according to the time in the system or import time from global lib
+- make dynamoDB or mongoDB replicate ito another region and sync between two AZ
+- chat system? > find out they r communicate through server or between two end point and how the another endpoint got the notification? r they alway check in database or what? and how to make read and unread function n=and also send and unsend function?
+- study dynamoDB rest API to connect to the database
