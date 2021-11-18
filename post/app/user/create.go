@@ -42,6 +42,5 @@ func (ctrl *Controller) CreateAdoptionPost(c *gin.Context) {
 		view.MakeErrResp2(c, 422, err)
 		return
 	}
-
 	view.MakeSuccessResp(c, 200, nil)
 }
