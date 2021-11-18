@@ -14,7 +14,7 @@ type CreatePostInputStruct struct{
 
 func CreateAdoptionPostInput (input CreatePostInputStruct) domain.CreateAdoptionPostStruct {
 	return domain.CreateAdoptionPostStruct{
-		ID:	"",
+		ID:	input.ID,
 		Animal: input.Animal,
 		Adopt: false,
 		UID: input.UID,
