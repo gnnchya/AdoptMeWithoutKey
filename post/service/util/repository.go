@@ -12,10 +12,12 @@ type RepositoryDynamoDB interface{
 	ReadLostPetPostByID(id string) (domain.CreateLostPetPostStruct, error)
 	CreateAdoptionPost (input domain.CreateAdoptionPostStruct) error
 	CreateLostPetPost (input domain.CreateLostPetPostStruct) error
-	ReadAllAdoptionPost (input userin.ReadAllAdoptionPostStruct) ([]domain.CreateAdoptionPostStruct, error)
-	ReadAllLostPetPost (input userin.ReadAllLostPetPostStruct) ([]domain.CreateLostPetPostStruct, error)
-	ReadAllAdoptionPostByField (input userin.ReadAllAdoptionPostStruct) ([]domain.CreateAdoptionPostStruct, error)
-	ReadAllLostPetPostByField (input userin.ReadAllLostPetPostStruct) ([]domain.CreateLostPetPostStruct, error)
+	UpdateAdoptionPost (input domain.CreateAdoptionPostStruct) error
+	UpdateLostPetPost (input domain.CreateLostPetPostStruct) error
+	ReadAllAdoptionPost (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error)
+	ReadAllLostPetPost (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
+	ReadAllAdoptionPostByField (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error)
+	ReadAllLostPetPostByField (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
 	DeleteAdoptionPost (id string) error
 	DeleteLostPetPost (id string) error
 }

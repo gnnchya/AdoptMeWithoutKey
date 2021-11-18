@@ -9,10 +9,12 @@ import (
 type Service interface {
 	ReadAdoptionPost(id string) (domain.CreateAdoptionPostStruct, error)
 	ReadLostPetPost(id string) (domain.CreateLostPetPostStruct, error)
-	CreateAdoptionPost (input domain.CreateAdoptionPostStruct) error
-	CreateLostPetPost (input domain.CreateLostPetPostStruct) error
-	ReadAllAdoptionPost (input userin.ReadAllAdoptionPostStruct) ([]domain.CreateAdoptionPostStruct, error)
-	ReadAllLostPetPost (input userin.ReadAllLostPetPostStruct) ([]domain.CreateLostPetPostStruct, error)
+	CreateAdoptionPost (input userin.CreatePostInputStruct) error
+	CreateLostPetPost (input userin.CreatePostInputStruct) error
+	UpdateAdoptionPost (input domain.CreateAdoptionPostStruct) error
+	UpdateLostPetPost (input domain.CreateLostPetPostStruct) error
+	ReadAllAdoptionPost (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error)
+	ReadAllLostPetPost (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
 	DeleteAdoptionPost (id string) error
 	DeleteLostPetPost (id string) error
 }

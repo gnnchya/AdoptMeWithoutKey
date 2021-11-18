@@ -16,7 +16,7 @@ func (ctrl *Controller) UpdateLostPetPost(c *gin.Context) {
 	}
 	input.UpdateAt = time.Now().Unix()
 	fmt.Println("update input:",input)
-	err := ctrl.service.CreateLostPetPost(*input)
+	err := ctrl.service.UpdateLostPetPost(*input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
@@ -33,7 +33,7 @@ func (ctrl *Controller) UpdateAdoptionPost(c *gin.Context) {
 	}
 	input.UpdateAt = time.Now().Unix()
 	fmt.Println("update input:",input)
-	err := ctrl.service.CreateAdoptionPost(*input)
+	err := ctrl.service.UpdateAdoptionPost(*input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return

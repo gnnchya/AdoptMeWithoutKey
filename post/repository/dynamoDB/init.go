@@ -11,10 +11,10 @@ type Repository struct{
 	Client 	*dynamodb.DynamoDB
 }
 
-func New(region string, accessKey string, secretKey string, token string)(repo *Repository, err error) {
+func New(region string)(repo *Repository, err error) {
 	sess, err := session.NewSession(&aws.Config{
 		Region:      aws.String(region),
-		Credentials: credentials.NewStaticCredentials(accessKey, secretKey ,token),
+		Credentials: credentials.NewEnvCredentials(),
 
 	})
 

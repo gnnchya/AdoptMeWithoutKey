@@ -3,7 +3,7 @@ package user
 import (
 	"fmt"
 	"github.com/gnnchya/AdoptMe/post/app/view"
-	"github.com/gnnchya/AdoptMe/post/domain"
+	"github.com/gnnchya/AdoptMe/post/service/user/userin"
 
 	"github.com/gin-gonic/gin"
 
@@ -11,16 +11,15 @@ import (
 )
 
 func (ctrl *Controller) CreateLostPetPost(c *gin.Context) {
-	input := domain.CreateLostPetPostStruct{}
+	input := &userin.CreatePostInputStruct{}
 	if err := c.ShouldBindJSON(input); err != nil {
 		view.MakeErrResp2(c, 400, err)
 		return
 	}
-
+	fmt.Println("create", input)
 	initID := goxid.New()
 	input.ID = initID.Gen()
-
-	err := ctrl.service.CreateLostPetPost(input)
+	err := ctrl.service.CreateLostPetPost(*input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
@@ -30,15 +29,14 @@ func (ctrl *Controller) CreateLostPetPost(c *gin.Context) {
 }
 
 func (ctrl *Controller) CreateAdoptionPost(c *gin.Context) {
-	input := &domain.CreateAdoptionPostStruct{}
+	input := &userin.CreatePostInputStruct{}
 	if err := c.ShouldBindJSON(input); err != nil {
 		view.MakeErrResp2(c, 400, err)
 		return
 	}
-	fmt.Println("create")
+	fmt.Println("create", input)
 	initID := goxid.New()
 	input.ID = initID.Gen()
-
 	err := ctrl.service.CreateAdoptionPost(*input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)

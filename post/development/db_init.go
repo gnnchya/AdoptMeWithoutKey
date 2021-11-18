@@ -86,7 +86,7 @@ func main() {
 
 	sess, err := session.NewSession(&aws.Config{
 		Region:      aws.String(configs.DynamoDBRegion),
-		Credentials: credentials.NewStaticCredentials(configs.DynamoDBAccessKey, configs.DynamoDBSecretKey, configs.DynamoDBToken),
+		Credentials: credentials.NewEnvCredentials(),
 	})
 
 	if err != nil {

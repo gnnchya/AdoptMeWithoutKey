@@ -8,7 +8,7 @@ import (
 	"github.com/gnnchya/AdoptMe/post/service/user/userin"
 )
 
-func (repo *Repository) ReadAllAdoptionPostByField (input userin.ReadAllAdoptionPostStruct) ([]domain.CreateAdoptionPostStruct, error) {
+func (repo *Repository) ReadAllAdoptionPostByField (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error) {
 	q := &dynamodb.ScanInput{
 		TableName: aws.String("AdoptionPost"),
 		Limit: aws.Int64(int64(input.Limit)),
@@ -41,7 +41,7 @@ func (repo *Repository) ReadAllAdoptionPostByField (input userin.ReadAllAdoption
 	return posts,err
 }
 
-func (repo *Repository) ReadAllLostPetPostByField (input userin.ReadAllLostPetPostStruct) ([]domain.CreateLostPetPostStruct, error) {
+func (repo *Repository) ReadAllLostPetPostByField (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error) {
 	q := &dynamodb.ScanInput{
 		TableName: aws.String("LostPetPost"),
 		Limit: aws.Int64(int64(input.Limit)),
@@ -74,7 +74,7 @@ func (repo *Repository) ReadAllLostPetPostByField (input userin.ReadAllLostPetPo
 	return posts,err
 }
 
-func (repo *Repository) ReadAllAdoptionPost (input userin.ReadAllAdoptionPostStruct) ([]domain.CreateAdoptionPostStruct, error) {
+func (repo *Repository) ReadAllAdoptionPost (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error) {
 	q := &dynamodb.ScanInput{
 		TableName: aws.String("AdoptionPost"),
 		Limit: aws.Int64(int64(input.Limit)),
@@ -96,7 +96,7 @@ func (repo *Repository) ReadAllAdoptionPost (input userin.ReadAllAdoptionPostStr
 	return posts,err
 }
 
-func (repo *Repository) ReadAllLostPetPost (input userin.ReadAllLostPetPostStruct) ([]domain.CreateLostPetPostStruct, error) {
+func (repo *Repository) ReadAllLostPetPost (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error) {
 	q := &dynamodb.ScanInput{
 		TableName: aws.String("LostPetPost"),
 		Limit: aws.Int64(int64(input.Limit)),

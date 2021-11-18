@@ -25,7 +25,7 @@ func (ctrl *Controller) ReadAllAdoptionPost(c *gin.Context) {
 		}
 	}
 
-	input := &userin.ReadAllAdoptionPostStruct{}
+	input := &userin.ReadAllAdoptionPostInputStruct{}
 	input.Limit = limit
 	input.Field = keyword
 	input.Page = page
@@ -57,7 +57,7 @@ func (ctrl *Controller) ReadAllLostPetPost(c *gin.Context) {
 		}
 	}
 
-	input := &userin.ReadAllLostPetPostStruct{}
+	input := &userin.ReadAllLostPetPostInputStruct{}
 	input.Limit = limit
 	input.Field = keyword
 	input.Page = page

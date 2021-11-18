@@ -7,10 +7,10 @@ import (
 type Config struct {
 	AppName string `env:"APP_NAME" envDefault:"gogo_blueprint"`
 
-	DynamoDBRegion string `env:"aws_region" envDefault:""`
-	DynamoDBAccessKey string `env:"aws_access_key_id" envDefault:""`
-	DynamoDBSecretKey string `env:"aws_secret_access_key_id" envDefault:""`
-	DynamoDBToken string `env:"aws_token_id" envDefault:""`
+	DynamoDBRegion string `env:"AWS_REGION" envDefault:""`
+	DynamoDBAccessKey string `env:"AWS_ACCESS_KEY" envDefault:""`
+	DynamoDBSecretKey string `env:"AWS_SECRET_ACCESS_KEY" envDefault:""`
+	DynamoDBToken string `env:"AWS_SESSION_TOKEN" envDefault:""`
 
 }
 

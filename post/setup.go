@@ -11,7 +11,7 @@ import (
 
 func newApp(appConfig *config.Config) *app.App {
 
-	dynamoDBClient,_ := dynamo.New(appConfig.DynamoDBRegion,appConfig.DynamoDBAccessKey,appConfig.DynamoDBSecretKey,appConfig.DynamoDBToken)
+	dynamoDBClient,_ := dynamo.New(appConfig.DynamoDBRegion)
 	user := userService.New(dynamoDBClient)
 	return app.New(user)
 }

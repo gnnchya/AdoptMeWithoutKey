@@ -6,7 +6,7 @@ import (
 	"github.com/gnnchya/AdoptMe/post/service/user/userin"
 )
 
-func (impl *implementation) ReadAllAdoptionPost (input userin.ReadAllAdoptionPostStruct) ([]domain.CreateAdoptionPostStruct, error){
+func (impl *implementation) ReadAllAdoptionPost (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error){
 	if input.Field == "all"{
 		a,err := impl.dynamoDB.ReadAllAdoptionPost(input)
 		if err != nil{
@@ -22,7 +22,7 @@ func (impl *implementation) ReadAllAdoptionPost (input userin.ReadAllAdoptionPos
 	}
 }
 
-func (impl *implementation) ReadAllLostPetPost (input userin.ReadAllLostPetPostStruct) ([]domain.CreateLostPetPostStruct, error){
+func (impl *implementation) ReadAllLostPetPost (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error){
 	if input.Field == "all"{
 		a,err := impl.dynamoDB.ReadAllLostPetPost(input)
 		if err != nil{
