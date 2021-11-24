@@ -27,3 +27,14 @@ func (ctrl *Controller) ReadLostPetPost(c *gin.Context) {
 
 	view.MakeSuccessResp(c, 200, a)
 }
+
+func (ctrl *Controller) ReadUserByID(c *gin.Context) {
+	id := c.Param("id")
+	a, err := ctrl.service.ReadUserByID(id)
+	if err != nil {
+		view.MakeErrResp2(c, 422, err)
+		return
+	}
+
+	view.MakeSuccessResp(c, 200, a)
+}

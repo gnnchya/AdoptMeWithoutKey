@@ -17,4 +17,6 @@ type Service interface {
 	ReadAllLostPetPost (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
 	DeleteAdoptionPost (id string) error
 	DeleteLostPetPost (id string) error
+	Register (input domain.UserStruct) error
+	ReadUserByID( uid string) (a domain.UserStruct, err error)
 }

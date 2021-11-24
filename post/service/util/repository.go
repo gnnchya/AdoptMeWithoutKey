@@ -20,4 +20,6 @@ type RepositoryDynamoDB interface{
 	ReadAllLostPetPostByField (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
 	DeleteAdoptionPost (id string) error
 	DeleteLostPetPost (id string) error
+	ReadUserByID (uid string) (domain.UserStruct, error)
+	Register (input domain.UserStruct) error
 }

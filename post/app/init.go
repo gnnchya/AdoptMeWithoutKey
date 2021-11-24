@@ -25,6 +25,8 @@ func (app *App) RegisterRoute(router *gin.Engine) *App {
 	{
 		adminRoute.GET("/AdoptionPost/:id", app.user.ReadAdoptionPost)
 		adminRoute.GET("/LostPetPost/:id", app.user.ReadLostPetPost)
+		adminRoute.GET("/UserInfo/:id", app.user.ReadUserByID)
+		adminRoute.POST("/Register", app.user.Register)
 		adminRoute.POST("/AdoptionPost", app.user.CreateAdoptionPost)
 		adminRoute.POST("/LostPetPost", app.user.CreateLostPetPost)
 		adminRoute.GET("/AdoptionPost", app.user.ReadAllAdoptionPost)

@@ -41,3 +41,17 @@ func (repo *Repository) ReadLostPetPostByID (id string) (domain.CreateLostPetPos
 	err = dynamodbattribute.UnmarshalMap(result.Item, &item)
 	return item, err
 }
+
+func (repo *Repository) ReadUserByID (uid string) (domain.UserStruct, error){
+	result, err := repo.Client.GetItem(&dynamodb.GetItemInput{
+		TableName: aws.String("User"),
+		Key: map[string]*dynamodb.AttributeValue{
+			"uid": {
+				S: aws.String(uid),
+			},
+		},
+	})
+	item := domain.UserStruct{}
+	err = dynamodbattribute.UnmarshalMap(result.Item, &item)
+	return item, err
+}

@@ -32,3 +32,13 @@ type CreateLostPetPostStruct struct {
 	UpdateAt int64 `json:"update_at"`
 	DeleteAt int64 `json:"delete_at"`
 }
+
+type UserStruct struct{
+	UID string `json:"uid"`
+	Username string `json:"username"`
+	Name string `json:"name"`
+	Address string `json:"address"`
+	Birthdate int64 `json:"birthdate"`
+	Email string `json:"email"`
+	Gender string `json:"gender"`
+}

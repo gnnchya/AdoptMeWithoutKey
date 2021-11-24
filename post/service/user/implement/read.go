@@ -1,7 +1,6 @@
 package implement
 
 import (
-	"fmt"
 	"github.com/gnnchya/AdoptMe/post/domain"
 )
 
@@ -9,9 +8,8 @@ func (impl *implementation) ReadAdoptionPost( id string) (a domain.CreateAdoptio
 
 	a,err = impl.dynamoDB.ReadAdoptionPostByID(id)
 	if err != nil{
-		fmt.Println("err2:", err)
+		return a, err
 	}
-	fmt.Println("a:", a)
 	return a, err
 }
 
@@ -19,8 +17,15 @@ func (impl *implementation) ReadLostPetPost( id string) (a domain.CreateLostPetP
 
 	a,err = impl.dynamoDB.ReadLostPetPostByID(id)
 	if err != nil{
-		fmt.Println("err2:", err)
+		return a, err
 	}
-	fmt.Println("a:", a)
+	return a, err
+}
+
+func (impl *implementation) ReadUserByID( uid string) (a domain.UserStruct, err error) {
+	a,err = impl.dynamoDB.ReadUserByID(uid)
+	if err != nil{
+		return a, err
+	}
 	return a, err
 }
