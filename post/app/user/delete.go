@@ -2,7 +2,7 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/gnnchya/AdoptMe/post/app/view"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/app/view"
 )
 
 func (ctrl *Controller) DeleteAdoptionPost(c *gin.Context) {

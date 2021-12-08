@@ -1,22 +1,24 @@
 package user
 
 import (
-	"github.com/gnnchya/AdoptMe/post/domain"
-	"github.com/gnnchya/AdoptMe/post/service/user/userin"
+	"context"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/service/user/userin"
 )
 
-
 type Service interface {
-	ReadAdoptionPost(id string) (domain.CreateAdoptionPostStruct, error)
-	ReadLostPetPost(id string) (domain.CreateLostPetPostStruct, error)
-	CreateAdoptionPost (input userin.CreatePostInputStruct) error
-	CreateLostPetPost (input userin.CreatePostInputStruct) error
-	UpdateAdoptionPost (input domain.CreateAdoptionPostStruct) error
-	UpdateLostPetPost (input domain.CreateLostPetPostStruct) error
-	ReadAllAdoptionPost (input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error)
-	ReadAllLostPetPost (input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
-	DeleteAdoptionPost (id string) error
-	DeleteLostPetPost (id string) error
-	Register (input domain.UserStruct) error
-	ReadUserByID( uid string) (a domain.UserStruct, err error)
+	ReadAdoptionPost(ctx context.Context, id string) (domain.CreateAdoptionPostStruct, error)
+	ReadLostPetPost(ctx context.Context, id string) (domain.CreateLostPetPostStruct, error)
+	CreateAdoptionPost(ctx context.Context, input userin.CreatePostInputStruct) error
+	CreateLostPetPost(ctx context.Context, input userin.CreatePostInputStruct) error
+	UpdateAdoptionPost(ctx context.Context, input domain.CreateAdoptionPostStruct) error
+	UpdateLostPetPost(ctx context.Context, input domain.CreateLostPetPostStruct) error
+	ReadAllAdoptionPost(ctx context.Context, input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error)
+	ReadAllLostPetPost(ctx context.Context, input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
+	DeleteAdoptionPost(id string) error
+	DeleteLostPetPost(id string) error
+	Register(input domain.UserStruct) error
+	ReadUserByID(uid string) (a domain.UserStruct, err error)
+	SearchAdoptionPost(ctx context.Context, input *userin.SearchInputStruct) ([]domain.CreateAdoptionPostStruct, error)
+	SearchLostPetPost(ctx context.Context, input *userin.SearchInputStruct) ([]domain.CreateLostPetPostStruct, error)
 }

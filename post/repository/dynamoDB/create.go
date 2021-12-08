@@ -3,12 +3,12 @@ package dynamoDB
 import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/gnnchya/AdoptMe/post/domain"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 	"log"
 	"strconv"
 )
 
-func (repo *Repository) CreateAdoptionPost (input domain.CreateAdoptionPostStruct) error {
+func (repo *Repository) CreateAdoptionPost(input domain.CreateAdoptionPostStruct) error {
 	item := &dynamodb.PutItemInput{
 		Item: map[string]*dynamodb.AttributeValue{
 			"id": {
@@ -71,7 +71,7 @@ func (repo *Repository) CreateAdoptionPost (input domain.CreateAdoptionPostStruc
 	return err
 }
 
-func (repo *Repository) CreateLostPetPost (input domain.CreateLostPetPostStruct) error {
+func (repo *Repository) CreateLostPetPost(input domain.CreateLostPetPostStruct) error {
 	item := &dynamodb.PutItemInput{
 		Item: map[string]*dynamodb.AttributeValue{
 			"id": {

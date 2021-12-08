@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/gnnchya/AdoptMe/post/service/user"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/service/user"
 )
 
 type Controller struct {

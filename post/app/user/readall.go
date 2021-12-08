@@ -2,8 +2,8 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/gnnchya/AdoptMe/post/app/view"
-	"github.com/gnnchya/AdoptMe/post/service/user/userin"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/app/view"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/service/user/userin"
 	"strconv"
 )
 
@@ -11,7 +11,7 @@ func (ctrl *Controller) ReadAllAdoptionPost(c *gin.Context) {
 	query := c.Request.URL.Query()
 	limit := 10
 	page := 1
-	keyword := "all"
+	keyword := ""
 	for key, value := range query {
 		queryValue := value[len(value)-1]
 		switch key {
@@ -30,7 +30,7 @@ func (ctrl *Controller) ReadAllAdoptionPost(c *gin.Context) {
 	input.Field = keyword
 	input.Page = page
 
-	a, err := ctrl.service.ReadAllAdoptionPost(*input)
+	a, err := ctrl.service.ReadAllAdoptionPost(c, *input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
@@ -43,7 +43,7 @@ func (ctrl *Controller) ReadAllLostPetPost(c *gin.Context) {
 	query := c.Request.URL.Query()
 	limit := 10
 	page := 1
-	keyword := "all"
+	keyword := ""
 	for key, value := range query {
 		queryValue := value[len(value)-1]
 		switch key {
@@ -62,7 +62,7 @@ func (ctrl *Controller) ReadAllLostPetPost(c *gin.Context) {
 	input.Field = keyword
 	input.Page = page
 
-	a, err := ctrl.service.ReadAllLostPetPost(*input)
+	a, err := ctrl.service.ReadAllLostPetPost(c, *input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return

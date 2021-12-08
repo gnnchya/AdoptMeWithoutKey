@@ -5,11 +5,11 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
-	"github.com/gnnchya/AdoptMe/post/domain"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 )
 
-func (repo *Repository) ReadAdoptionPostByID (id string) (domain.CreateAdoptionPostStruct, error){
-	fmt.Println("id:",id)
+func (repo *Repository) ReadAdoptionPostByID(id string) (domain.CreateAdoptionPostStruct, error) {
+	fmt.Println("id:", id)
 	result, err := repo.Client.GetItem(&dynamodb.GetItemInput{
 		TableName: aws.String("AdoptionPost"),
 		Key: map[string]*dynamodb.AttributeValue{
@@ -21,12 +21,12 @@ func (repo *Repository) ReadAdoptionPostByID (id string) (domain.CreateAdoptionP
 	item := domain.CreateAdoptionPostStruct{}
 	// var item string
 	err = dynamodbattribute.UnmarshalMap(result.Item, &item)
-	fmt.Println("item:",item)
+	fmt.Println("item:", item)
 	return item, err
 }
 
-func (repo *Repository) ReadLostPetPostByID (id string) (domain.CreateLostPetPostStruct, error){
-	fmt.Println("id:",id)
+func (repo *Repository) ReadLostPetPostByID(id string) (domain.CreateLostPetPostStruct, error) {
+	fmt.Println("id:", id)
 	result, err := repo.Client.GetItem(&dynamodb.GetItemInput{
 		TableName: aws.String("LostPetPost"),
 		Key: map[string]*dynamodb.AttributeValue{
@@ -36,15 +36,15 @@ func (repo *Repository) ReadLostPetPostByID (id string) (domain.CreateLostPetPos
 		},
 	})
 	item := domain.CreateLostPetPostStruct{}
-	fmt.Println("item:",item)
+	fmt.Println("item:", item)
 
 	err = dynamodbattribute.UnmarshalMap(result.Item, &item)
 	return item, err
 }
 
-func (repo *Repository) ReadUserByID (uid string) (domain.UserStruct, error){
+func (repo *Repository) ReadUserByID(uid string) (domain.UserStruct, error) {
 	result, err := repo.Client.GetItem(&dynamodb.GetItemInput{
-		TableName: aws.String("User"),
+		TableName: aws.String("AdoptMe-User"),
 		Key: map[string]*dynamodb.AttributeValue{
 			"uid": {
 				S: aws.String(uid),

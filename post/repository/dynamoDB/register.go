@@ -3,12 +3,12 @@ package dynamoDB
 import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/gnnchya/AdoptMe/post/domain"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 	"log"
 	"strconv"
 )
 
-func (repo *Repository) Register (input domain.UserStruct) error {
+func (repo *Repository) Register(input domain.UserStruct) error {
 	item := &dynamodb.PutItemInput{
 		Item: map[string]*dynamodb.AttributeValue{
 			"uid": {
@@ -33,7 +33,7 @@ func (repo *Repository) Register (input domain.UserStruct) error {
 				N: aws.String(strconv.Itoa(int(input.Birthdate))),
 			},
 		},
-		TableName: aws.String("User"),
+		TableName: aws.String("AdoptMe-User"),
 	}
 	_, err := repo.Client.PutItem(item)
 

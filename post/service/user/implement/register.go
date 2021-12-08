@@ -1,12 +1,12 @@
 package implement
 
 import (
-	"github.com/gnnchya/AdoptMe/post/domain"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 )
 
-func (impl *implementation) Register (input domain.UserStruct) error {
+func (impl *implementation) Register(input domain.UserStruct) error {
 	err := impl.dynamoDB.Register(input)
-	if err != nil{
+	if err != nil {
 		return err
 	}
 	return err

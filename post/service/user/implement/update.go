@@ -1,24 +1,31 @@
 package implement
 
 import (
+	"context"
 	"fmt"
-	"github.com/gnnchya/AdoptMe/post/domain"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 )
 
-func (impl *implementation) UpdateAdoptionPost (input domain.CreateAdoptionPostStruct) error {
+func (impl *implementation) UpdateAdoptionPost(ctx context.Context, input domain.CreateAdoptionPostStruct) error {
 	err := impl.dynamoDB.CreateAdoptionPost(input)
-	if err != nil{
+	if err != nil {
 		fmt.Println("err2:", err)
 	}
-
+	err = impl.openSearch.UpdateAdoptionPost(ctx, &input)
+	if err != nil {
+		fmt.Println("err2:", err)
+	}
 	return err
 }
 
-func (impl *implementation) UpdateLostPetPost (input domain.CreateLostPetPostStruct) error {
+func (impl *implementation) UpdateLostPetPost(ctx context.Context, input domain.CreateLostPetPostStruct) error {
 	err := impl.dynamoDB.CreateLostPetPost(input)
-	if err != nil{
+	if err != nil {
 		fmt.Println("err2:", err)
 	}
-
+	err = impl.openSearch.UpdateLostPetPost(ctx, &input)
+	if err != nil {
+		fmt.Println("err2:", err)
+	}
 	return err
 }

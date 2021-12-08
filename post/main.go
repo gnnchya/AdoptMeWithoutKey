@@ -2,7 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/gnnchya/AdoptMe/post/config"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/config"
+	"log"
+
 	//"github.com/gin-contrib/cors"
 	//cors "github.com/rs/cors/wrapper/gin"
 	ginLogRus "github.com/toorop/gin-logrus"
@@ -24,6 +26,7 @@ func CORSMiddleware() gin.HandlerFunc {
 		c.Next()
 	}
 }
+func init() { log.SetFlags(log.Lshortfile | log.LstdFlags) }
 
 func main() {
 
@@ -48,7 +51,6 @@ func main() {
 	//}))
 
 	router.Use(CORSMiddleware())
-
 
 	// old
 	//router.Use(cors.AllowAll())

@@ -5,7 +5,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/gnnchya/AdoptMe/post/config"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/config"
 	"log"
 )
 

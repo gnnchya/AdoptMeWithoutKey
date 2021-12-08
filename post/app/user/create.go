@@ -2,8 +2,8 @@ package user
 
 import (
 	"fmt"
-	"github.com/gnnchya/AdoptMe/post/app/view"
-	"github.com/gnnchya/AdoptMe/post/service/user/userin"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/app/view"
+	"github.com/gnnchya/AdoptMeWithoutKey/post/service/user/userin"
 
 	"github.com/gin-gonic/gin"
 
@@ -19,7 +19,7 @@ func (ctrl *Controller) CreateLostPetPost(c *gin.Context) {
 	fmt.Println("create", input)
 	initID := goxid.New()
 	input.ID = initID.Gen()
-	err := ctrl.service.CreateLostPetPost(*input)
+	err := ctrl.service.CreateLostPetPost(c, *input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
@@ -37,7 +37,7 @@ func (ctrl *Controller) CreateAdoptionPost(c *gin.Context) {
 	fmt.Println("create", input)
 	initID := goxid.New()
 	input.ID = initID.Gen()
-	err := ctrl.service.CreateAdoptionPost(*input)
+	err := ctrl.service.CreateAdoptionPost(c, *input)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
