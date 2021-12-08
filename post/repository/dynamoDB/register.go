@@ -29,7 +29,7 @@ func (repo *Repository) Register(input domain.UserStruct) error {
 			"email": {
 				S: aws.String(input.Email),
 			},
-			"post_at": {
+			"birthdate": {
 				N: aws.String(strconv.Itoa(int(input.Birthdate))),
 			},
 		},
