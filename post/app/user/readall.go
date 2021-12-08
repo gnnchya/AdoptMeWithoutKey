@@ -11,7 +11,7 @@ func (ctrl *Controller) ReadAllAdoptionPost(c *gin.Context) {
 	query := c.Request.URL.Query()
 	limit := 10
 	page := 1
-	keyword := ""
+	keyword := "all"
 	for key, value := range query {
 		queryValue := value[len(value)-1]
 		switch key {
@@ -43,7 +43,7 @@ func (ctrl *Controller) ReadAllLostPetPost(c *gin.Context) {
 	query := c.Request.URL.Query()
 	limit := 10
 	page := 1
-	keyword := ""
+	keyword := "all"
 	for key, value := range query {
 		queryValue := value[len(value)-1]
 		switch key {
