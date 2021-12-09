@@ -16,6 +16,9 @@ type Config struct {
 	OpenSearchDBUsername string `env:"ELASTIC_USERNAME" envDefault:""`
 	OpenSearchDBPassword string `env:"ELASTIC_PASSWORD" envDefault:""`
 	//ElasticDBIndex    string `env:"ELASTIC_INDEX" envDefault:"post"`
+
+	Email         string `env:"EMAIL" envDefault:""`
+	EmailPassword string `env:"EMAIL_PASSWORD" envDefault:""`
 }
 
 func Get() *Config {

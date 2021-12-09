@@ -20,7 +20,7 @@ func (repo *Repository) ReadAdoptionPost(id string, ctx context.Context) (result
 }
 
 func (repo *Repository) ReadLostPetPost(id string, ctx context.Context) (result domain.CreateLostPetPostStruct, err error) {
-	if found, err := repo.CheckExistAdoptionPostID(ctx, id); found == false {
+	if found, err := repo.CheckExistLostPetPostID(ctx, id); found == false {
 		return result, fmt.Errorf("error : ID does not exist")
 	} else if err != nil {
 		return result, err
