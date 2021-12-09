@@ -13,7 +13,6 @@ func (ctrl *Controller) ReadAdoptionPost(c *gin.Context) {
 		view.MakeErrResp2(c, 422, err)
 		return
 	}
-
 	view.MakeSuccessResp(c, 200, a)
 }
 
