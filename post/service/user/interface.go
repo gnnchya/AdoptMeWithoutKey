@@ -21,4 +21,6 @@ type Service interface {
 	ReadUserByID(uid string) (a domain.UserStruct, err error)
 	SearchAdoptionPost(ctx context.Context, input *userin.SearchInputStruct) ([]domain.CreateAdoptionPostStruct, error)
 	SearchLostPetPost(ctx context.Context, input *userin.SearchInputStruct) ([]domain.CreateLostPetPostStruct, error)
+	Found(ctx context.Context, id string, uid string) error
+	Adopted(ctx context.Context, id string, uid string) error
 }

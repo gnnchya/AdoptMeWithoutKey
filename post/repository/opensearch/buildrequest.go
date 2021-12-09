@@ -86,15 +86,16 @@ func buildViewRequest(id string) bytes.Buffer {
 	return buf
 }
 
-func buildViewAllRequest(page int, size int, index string) bytes.Buffer {
+func buildViewAllRequest(page int, size int, field string) bytes.Buffer {
 	var buf bytes.Buffer
 	from := (page - 1) * size
 	query := map[string]interface{}{
 		"from": from,
 		"size": size,
 		"query": map[string]interface{}{
+
 			"match": map[string]interface{}{
-				"_index": index,
+				field: false,
 			},
 		},
 	}
@@ -104,17 +105,22 @@ func buildViewAllRequest(page int, size int, index string) bytes.Buffer {
 	return buf
 }
 
-func buildReadAllByAnimalTypeRequest(page int, size int, keyword string) bytes.Buffer {
+func buildReadAllByAnimalTypeRequest(page int, size int, keyword string, field string) bytes.Buffer {
 	var buf bytes.Buffer
 	from := (page - 1) * size
 	query := map[string]interface{}{
 		"from": from,
 		"size": size,
 		"query": map[string]interface{}{
-			"query_string": map[string]interface{}{
-				"query": "*" + keyword + "*",
-				"fields": []interface{}{
-					"animal.type",
+			"bool": map[string]interface{}{
+				"must": []map[string]interface{}{
+
+					{"match": map[string]interface{}{
+						"animal.type": keyword,
+					}},
+					{"match": map[string]interface{}{
+						field: false,
+					}},
 				},
 			},
 		},

@@ -35,6 +35,8 @@ func (app *App) RegisterRoute(router *gin.Engine) *App {
 		adminRoute.DELETE("/LostPetPost/:id", app.user.DeleteLostPetPost)
 		adminRoute.PUT("/AdoptionPost", app.user.UpdateAdoptionPost)
 		adminRoute.PUT("/LostPetPost", app.user.UpdateLostPetPost)
+		adminRoute.POST("/Adopt", app.user.Adopt)
+		adminRoute.POST("/Found", app.user.Found)
 
 	}
 
