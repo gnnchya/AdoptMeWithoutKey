@@ -10,22 +10,22 @@ func (impl *implementation) Found(ctx context.Context, id string, uid string) er
 	adopter, err := impl.ReadUserByID(uid)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		//return err
 	}
 	postData, err := impl.ReadLostPetPost(ctx, id)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		//return err
 	}
 	owner, err := impl.ReadUserByID(postData.UID)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		//return err
 	}
 	err = email.SendFoundEmail(owner.Email, adopter)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		//return err
 	}
 	return err
 }

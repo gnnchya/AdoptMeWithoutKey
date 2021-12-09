@@ -18,10 +18,10 @@ func SendAdoptEmail(email string, adopter domain.UserStruct) (err error) {
 	m.SetHeader("To", email)
 
 	// Set E-Mail subject
-	m.SetHeader("Subject", "Your Pet has been adopted")
+	m.SetHeader("Subject", "Your Pet has been adopted!!!")
 
 	// Set E-Mail body. You can set plain text or html with text/html
-	m.SetBody("text/plain", "This is your adopter\n"+"Name:"+adopter.Name+"\nPlease contact your adopter by this Email address:"+adopter.Email)
+	m.SetBody("text/plain", "This is your adopter\n"+"Name:"+adopter.Name+"\nPlease contact them by this Email: "+adopter.Email)
 
 	// Settings for SMTP server
 	d := gomail.NewDialer("smtp.gmail.com", 587, config.Get().Email, config.Get().EmailPassword)
@@ -48,10 +48,10 @@ func SendFoundEmail(email string, founder domain.UserStruct) (err error) {
 	m.SetHeader("To", email)
 
 	// Set E-Mail subject
-	m.SetHeader("Subject", "Your Pet has been found")
+	m.SetHeader("Subject", "Your Pet has been found!!!")
 
 	// Set E-Mail body. You can set plain text or html with text/html
-	m.SetBody("text/plain", "This is your founder\n"+"Name:"+founder.Name+"\nPlease contact your founder by this Email address:"+founder.Email)
+	m.SetBody("text/plain", "This person found your pet\n"+"Name:"+founder.Name+"\nPlease contact them by this Email: "+founder.Email)
 
 	// Settings for SMTP server
 	d := gomail.NewDialer("smtp.gmail.com", 587, config.Get().Email, config.Get().EmailPassword)
