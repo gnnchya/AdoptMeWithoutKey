@@ -5,22 +5,24 @@ import (
 	"github.com/gnnchya/AdoptMeWithoutKey/post/app/view"
 )
 
-func (ctrl *Controller) DeleteAdoptionPost(c *gin.Context) {
+func (ctrl *Controller) SoftDeleteLostPetPost(c *gin.Context) {
 	id := c.Param("id")
-	err := ctrl.service.DeleteAdoptionPost(c, id)
+	err := ctrl.service.SoftDeleteLostPetPost(c, id)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
 	}
+
 	view.MakeSuccessResp(c, 200, nil)
 }
 
-func (ctrl *Controller) DeleteLostPetPost(c *gin.Context) {
+func (ctrl *Controller) SoftDeleteAdoptionPost(c *gin.Context) {
 	id := c.Param("id")
-	err := ctrl.service.DeleteLostPetPost(c, id)
+	err := ctrl.service.SoftDeleteAdoptionPost(c, id)
 	if err != nil {
 		view.MakeErrResp2(c, 422, err)
 		return
 	}
+
 	view.MakeSuccessResp(c, 200, nil)
 }

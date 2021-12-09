@@ -15,12 +15,14 @@ type Service interface {
 	UpdateLostPetPost(ctx context.Context, input domain.CreateLostPetPostStruct) error
 	ReadAllAdoptionPost(ctx context.Context, input userin.ReadAllAdoptionPostInputStruct) ([]domain.CreateAdoptionPostStruct, error)
 	ReadAllLostPetPost(ctx context.Context, input userin.ReadAllLostPetPostInputStruct) ([]domain.CreateLostPetPostStruct, error)
-	DeleteAdoptionPost(id string) error
-	DeleteLostPetPost(id string) error
+	DeleteAdoptionPost(ctx context.Context, id string) error
+	DeleteLostPetPost(ctx context.Context, id string) error
 	Register(input domain.UserStruct) error
 	ReadUserByID(uid string) (a domain.UserStruct, err error)
 	SearchAdoptionPost(ctx context.Context, input *userin.SearchInputStruct) ([]domain.CreateAdoptionPostStruct, error)
 	SearchLostPetPost(ctx context.Context, input *userin.SearchInputStruct) ([]domain.CreateLostPetPostStruct, error)
 	Found(ctx context.Context, id string, uid string) error
 	Adopted(ctx context.Context, id string, uid string) error
+	SoftDeleteAdoptionPost(ctx context.Context, id string) error
+	SoftDeleteLostPetPost(ctx context.Context, id string) error
 }

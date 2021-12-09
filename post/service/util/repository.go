@@ -38,4 +38,8 @@ type RepositoryOpenSearch interface {
 	ReadAllLostPetPost(page int, size int, ctx context.Context) ([]domain.CreateLostPetPostStruct, error)
 	ReadAllAdoptionPostByType(input userin.ReadAllAdoptionPostInputStruct, ctx context.Context) ([]domain.CreateAdoptionPostStruct, error)
 	ReadAllLostPetPostByType(input userin.ReadAllLostPetPostInputStruct, ctx context.Context) ([]domain.CreateLostPetPostStruct, error)
+	SoftDeleteAdoptionPost(ctx context.Context, id string) error
+	SoftDeleteLostPetPost(ctx context.Context, id string) error
+	DeleteAdoptionPost(ctx context.Context, id string) error
+	DeleteLostPetPost(ctx context.Context, id string) error
 }

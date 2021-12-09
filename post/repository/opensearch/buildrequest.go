@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 	"log"
+	"time"
 )
 
 func buildSearchRequest(page int, size int, keyword string) bytes.Buffer {
@@ -63,7 +64,7 @@ func BuildUpdateLostPetPostRequest(t *domain.CreateLostPetPostStruct) (buf bytes
 	query := map[string]interface{}{
 		"doc": map[string]interface{}{
 			"animal":   t.Animal,
-			"adopt":    t.Found,
+			"found":    t.Found,
 			"location": t.LostLocation,
 		},
 	}
@@ -131,4 +132,16 @@ func buildReadAllByAnimalTypeRequest(page int, size int, keyword string, field s
 		log.Fatalf("Error encoding query: %s", err)
 	}
 	return buf
+}
+
+func BuildSoftDeletePostRequest() (buf bytes.Buffer, err error) {
+	query := map[string]interface{}{
+		"doc": map[string]interface{}{
+			"delete_at": time.Now().Unix(),
+		},
+	}
+	if err := json.NewEncoder(&buf).Encode(query); err != nil {
+		return buf, err
+	}
+	return buf, err
 }
