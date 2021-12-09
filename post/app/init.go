@@ -37,6 +37,8 @@ func (app *App) RegisterRoute(router *gin.Engine) *App {
 		adminRoute.PUT("/LostPetPost", app.user.UpdateLostPetPost)
 		adminRoute.POST("/Adopt", app.user.Adopt)
 		adminRoute.POST("/Found", app.user.Found)
+		adminRoute.GET("/SearchAdoptionPost", app.user.SearchAdoptionPost)
+		adminRoute.GET("/SearchLostPetPost", app.user.SearchLostPetPost)
 
 	}
 

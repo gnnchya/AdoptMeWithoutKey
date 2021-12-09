@@ -19,6 +19,8 @@ func buildSearchRequest(page int, size int, keyword string) bytes.Buffer {
 				"fields": []interface{}{
 					"animal.type",
 					"animal.general_information",
+					"animal.species",
+					"animal.medical_condition",
 				},
 			},
 		},
