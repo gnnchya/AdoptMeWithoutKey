@@ -8,7 +8,7 @@ import (
 
 func (impl *implementation) SoftDeleteLostPetPost(ctx context.Context, id string) error {
 	input, err := impl.dynamoDB.ReadLostPetPostByID(id)
-	input.UpdateAt = time.Now().Unix()
+	input.DeleteAt = time.Now().Unix()
 	err = impl.dynamoDB.CreateLostPetPost(input)
 	if err != nil {
 		fmt.Println("err2:", err)
@@ -22,7 +22,7 @@ func (impl *implementation) SoftDeleteLostPetPost(ctx context.Context, id string
 
 func (impl *implementation) SoftDeleteAdoptionPost(ctx context.Context, id string) error {
 	input, err := impl.dynamoDB.ReadAdoptionPostByID(id)
-	input.UpdateAt = time.Now().Unix()
+	input.DeleteAt = time.Now().Unix()
 	err = impl.dynamoDB.CreateAdoptionPost(input)
 	if err != nil {
 		fmt.Println("err2:", err)
