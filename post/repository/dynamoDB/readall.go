@@ -35,7 +35,9 @@ func (repo *Repository) ReadAllAdoptionPostByField(input userin.ReadAllAdoptionP
 		if err != nil {
 			panic(err)
 		}
-		posts = append(posts, post)
+		if post.DeleteAt == 0 && post.Adopt == false {
+			posts = append(posts, post)
+		}
 	}
 
 	return posts, err
@@ -68,7 +70,9 @@ func (repo *Repository) ReadAllLostPetPostByField(input userin.ReadAllLostPetPos
 		if err != nil {
 			panic(err)
 		}
-		posts = append(posts, post)
+		if post.DeleteAt == 0 && post.Found == false {
+			posts = append(posts, post)
+		}
 	}
 
 	return posts, err
@@ -90,7 +94,9 @@ func (repo *Repository) ReadAllAdoptionPost(input userin.ReadAllAdoptionPostInpu
 		if err != nil {
 			panic(err)
 		}
-		posts = append(posts, post)
+		if post.DeleteAt == 0 && post.Adopt == false {
+			posts = append(posts, post)
+		}
 	}
 
 	return posts, err
@@ -112,8 +118,10 @@ func (repo *Repository) ReadAllLostPetPost(input userin.ReadAllLostPetPostInputS
 		if err != nil {
 			panic(err)
 		}
-		posts = append(posts, post)
+		if post.DeleteAt == 0 && post.Found == false {
+			posts = append(posts, post)
+		}
 	}
 
-	return posts,err
+	return posts, err
 }

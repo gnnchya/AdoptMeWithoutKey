@@ -96,9 +96,15 @@ func buildViewAllRequest(page int, size int, field string) bytes.Buffer {
 		"from": from,
 		"size": size,
 		"query": map[string]interface{}{
-
-			"match": map[string]interface{}{
-				field: false,
+			"bool": map[string]interface{}{
+				"must": []map[string]interface{}{
+					{"match": map[string]interface{}{
+						field: false,
+					}},
+					{"match": map[string]interface{}{
+						"delete_at": 0,
+					}},
+				},
 			},
 		},
 	}
@@ -123,6 +129,9 @@ func buildReadAllByAnimalTypeRequest(page int, size int, keyword string, field s
 					}},
 					{"match": map[string]interface{}{
 						field: false,
+					}},
+					{"match": map[string]interface{}{
+						"delete_at": 0,
 					}},
 				},
 			},
