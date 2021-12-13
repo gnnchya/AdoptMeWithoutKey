@@ -3356,10 +3356,10 @@ type ElasticsearchDestinationConfiguration struct {
 
 	// Defines how documents should be delivered to Amazon S3. When it is set to
 	// FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could
-	// not be indexed to the configured Amazon S3 destination, with elasticsearch-failed/
+	// not be indexed to the configured Amazon S3 destination, with opensearch-failed/
 	// appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
 	// delivers all incoming records to Amazon S3, and also writes failed documents
-	// with elasticsearch-failed/ appended to the prefix. For more information,
+	// with opensearch-failed/ appended to the prefix. For more information,
 	// see Amazon S3 Backup for the Amazon ES Destination (https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup).
 	// Default value is FailedDocumentsOnly.
 	//

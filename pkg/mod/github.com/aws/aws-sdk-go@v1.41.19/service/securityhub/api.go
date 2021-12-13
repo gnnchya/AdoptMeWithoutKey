@@ -18026,14 +18026,14 @@ type AwsElasticsearchDomainElasticsearchClusterConfigDetails struct {
 	DedicatedMasterEnabled *bool `type:"boolean"`
 
 	// The hardware configuration of the computer that hosts the dedicated master
-	// node. For example, m3.medium.elasticsearch. If this attribute is specified,
+	// node. For example, m3.medium.opensearch. If this attribute is specified,
 	// then DedicatedMasterEnabled must be true.
 	DedicatedMasterType *string `type:"string"`
 
 	// The number of data nodes to use in the Elasticsearch domain.
 	InstanceCount *int64 `type:"integer"`
 
-	// The instance type for your data nodes. For example, m3.medium.elasticsearch.
+	// The instance type for your data nodes. For example, m3.medium.opensearch.
 	InstanceType *string `type:"string"`
 
 	// Configuration options for zone awareness. Provided if ZoneAwarenessEnabled

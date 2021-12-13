@@ -25251,7 +25251,7 @@ type Action struct {
 	// The Elasticsearch action can only be used by existing rule actions. To create
 	// a new rule action or to update an existing rule action, use the OpenSearch
 	// rule action instead. For more information, see OpenSearchAction (https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html).
-	Elasticsearch *ElasticsearchAction `locationName:"elasticsearch" type:"structure"`
+	Elasticsearch *ElasticsearchAction `locationName:"opensearch" type:"structure"`
 
 	// Write to an Amazon Kinesis Firehose stream.
 	Firehose *FirehoseAction `locationName:"firehose" type:"structure"`

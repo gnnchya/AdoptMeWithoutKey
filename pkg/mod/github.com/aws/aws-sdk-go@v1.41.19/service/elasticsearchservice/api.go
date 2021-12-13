@@ -10570,7 +10570,7 @@ type ListElasticsearchInstanceTypesInput struct {
 	// instance types when modifying existing domain.
 	DomainName *string `location:"querystring" locationName:"domainName" min:"3" type:"string"`
 
-	// Version of Elasticsearch for which list of supported elasticsearch instance
+	// Version of Elasticsearch for which list of supported opensearch instance
 	// types are needed.
 	//
 	// ElasticsearchVersion is a required field
@@ -14117,178 +14117,178 @@ func DomainPackageStatus_Values() []string {
 
 const (
 	// ESPartitionInstanceTypeM3MediumElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM3MediumElasticsearch = "m3.medium.elasticsearch"
+	ESPartitionInstanceTypeM3MediumElasticsearch = "m3.medium.opensearch"
 
 	// ESPartitionInstanceTypeM3LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM3LargeElasticsearch = "m3.large.elasticsearch"
+	ESPartitionInstanceTypeM3LargeElasticsearch = "m3.large.opensearch"
 
 	// ESPartitionInstanceTypeM3XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM3XlargeElasticsearch = "m3.xlarge.elasticsearch"
+	ESPartitionInstanceTypeM3XlargeElasticsearch = "m3.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM32xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM32xlargeElasticsearch = "m3.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeM32xlargeElasticsearch = "m3.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM4LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM4LargeElasticsearch = "m4.large.elasticsearch"
+	ESPartitionInstanceTypeM4LargeElasticsearch = "m4.large.opensearch"
 
 	// ESPartitionInstanceTypeM4XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM4XlargeElasticsearch = "m4.xlarge.elasticsearch"
+	ESPartitionInstanceTypeM4XlargeElasticsearch = "m4.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM42xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM42xlargeElasticsearch = "m4.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeM42xlargeElasticsearch = "m4.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM44xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM44xlargeElasticsearch = "m4.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeM44xlargeElasticsearch = "m4.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM410xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM410xlargeElasticsearch = "m4.10xlarge.elasticsearch"
+	ESPartitionInstanceTypeM410xlargeElasticsearch = "m4.10xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM5LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM5LargeElasticsearch = "m5.large.elasticsearch"
+	ESPartitionInstanceTypeM5LargeElasticsearch = "m5.large.opensearch"
 
 	// ESPartitionInstanceTypeM5XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM5XlargeElasticsearch = "m5.xlarge.elasticsearch"
+	ESPartitionInstanceTypeM5XlargeElasticsearch = "m5.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM52xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM52xlargeElasticsearch = "m5.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeM52xlargeElasticsearch = "m5.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM54xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM54xlargeElasticsearch = "m5.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeM54xlargeElasticsearch = "m5.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeM512xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeM512xlargeElasticsearch = "m5.12xlarge.elasticsearch"
+	ESPartitionInstanceTypeM512xlargeElasticsearch = "m5.12xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR5LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR5LargeElasticsearch = "r5.large.elasticsearch"
+	ESPartitionInstanceTypeR5LargeElasticsearch = "r5.large.opensearch"
 
 	// ESPartitionInstanceTypeR5XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR5XlargeElasticsearch = "r5.xlarge.elasticsearch"
+	ESPartitionInstanceTypeR5XlargeElasticsearch = "r5.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR52xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR52xlargeElasticsearch = "r5.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeR52xlargeElasticsearch = "r5.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR54xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR54xlargeElasticsearch = "r5.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeR54xlargeElasticsearch = "r5.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR512xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR512xlargeElasticsearch = "r5.12xlarge.elasticsearch"
+	ESPartitionInstanceTypeR512xlargeElasticsearch = "r5.12xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC5LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC5LargeElasticsearch = "c5.large.elasticsearch"
+	ESPartitionInstanceTypeC5LargeElasticsearch = "c5.large.opensearch"
 
 	// ESPartitionInstanceTypeC5XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC5XlargeElasticsearch = "c5.xlarge.elasticsearch"
+	ESPartitionInstanceTypeC5XlargeElasticsearch = "c5.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC52xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC52xlargeElasticsearch = "c5.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeC52xlargeElasticsearch = "c5.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC54xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC54xlargeElasticsearch = "c5.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeC54xlargeElasticsearch = "c5.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC59xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC59xlargeElasticsearch = "c5.9xlarge.elasticsearch"
+	ESPartitionInstanceTypeC59xlargeElasticsearch = "c5.9xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC518xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC518xlargeElasticsearch = "c5.18xlarge.elasticsearch"
+	ESPartitionInstanceTypeC518xlargeElasticsearch = "c5.18xlarge.opensearch"
 
 	// ESPartitionInstanceTypeUltrawarm1MediumElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeUltrawarm1MediumElasticsearch = "ultrawarm1.medium.elasticsearch"
+	ESPartitionInstanceTypeUltrawarm1MediumElasticsearch = "ultrawarm1.medium.opensearch"
 
 	// ESPartitionInstanceTypeUltrawarm1LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeUltrawarm1LargeElasticsearch = "ultrawarm1.large.elasticsearch"
+	ESPartitionInstanceTypeUltrawarm1LargeElasticsearch = "ultrawarm1.large.opensearch"
 
 	// ESPartitionInstanceTypeT2MicroElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeT2MicroElasticsearch = "t2.micro.elasticsearch"
+	ESPartitionInstanceTypeT2MicroElasticsearch = "t2.micro.opensearch"
 
 	// ESPartitionInstanceTypeT2SmallElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeT2SmallElasticsearch = "t2.small.elasticsearch"
+	ESPartitionInstanceTypeT2SmallElasticsearch = "t2.small.opensearch"
 
 	// ESPartitionInstanceTypeT2MediumElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeT2MediumElasticsearch = "t2.medium.elasticsearch"
+	ESPartitionInstanceTypeT2MediumElasticsearch = "t2.medium.opensearch"
 
 	// ESPartitionInstanceTypeR3LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR3LargeElasticsearch = "r3.large.elasticsearch"
+	ESPartitionInstanceTypeR3LargeElasticsearch = "r3.large.opensearch"
 
 	// ESPartitionInstanceTypeR3XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR3XlargeElasticsearch = "r3.xlarge.elasticsearch"
+	ESPartitionInstanceTypeR3XlargeElasticsearch = "r3.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR32xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR32xlargeElasticsearch = "r3.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeR32xlargeElasticsearch = "r3.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR34xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR34xlargeElasticsearch = "r3.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeR34xlargeElasticsearch = "r3.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR38xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR38xlargeElasticsearch = "r3.8xlarge.elasticsearch"
+	ESPartitionInstanceTypeR38xlargeElasticsearch = "r3.8xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI2XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI2XlargeElasticsearch = "i2.xlarge.elasticsearch"
+	ESPartitionInstanceTypeI2XlargeElasticsearch = "i2.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI22xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI22xlargeElasticsearch = "i2.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeI22xlargeElasticsearch = "i2.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeD2XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeD2XlargeElasticsearch = "d2.xlarge.elasticsearch"
+	ESPartitionInstanceTypeD2XlargeElasticsearch = "d2.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeD22xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeD22xlargeElasticsearch = "d2.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeD22xlargeElasticsearch = "d2.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeD24xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeD24xlargeElasticsearch = "d2.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeD24xlargeElasticsearch = "d2.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeD28xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeD28xlargeElasticsearch = "d2.8xlarge.elasticsearch"
+	ESPartitionInstanceTypeD28xlargeElasticsearch = "d2.8xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC4LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC4LargeElasticsearch = "c4.large.elasticsearch"
+	ESPartitionInstanceTypeC4LargeElasticsearch = "c4.large.opensearch"
 
 	// ESPartitionInstanceTypeC4XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC4XlargeElasticsearch = "c4.xlarge.elasticsearch"
+	ESPartitionInstanceTypeC4XlargeElasticsearch = "c4.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC42xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC42xlargeElasticsearch = "c4.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeC42xlargeElasticsearch = "c4.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC44xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC44xlargeElasticsearch = "c4.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeC44xlargeElasticsearch = "c4.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeC48xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeC48xlargeElasticsearch = "c4.8xlarge.elasticsearch"
+	ESPartitionInstanceTypeC48xlargeElasticsearch = "c4.8xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR4LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR4LargeElasticsearch = "r4.large.elasticsearch"
+	ESPartitionInstanceTypeR4LargeElasticsearch = "r4.large.opensearch"
 
 	// ESPartitionInstanceTypeR4XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR4XlargeElasticsearch = "r4.xlarge.elasticsearch"
+	ESPartitionInstanceTypeR4XlargeElasticsearch = "r4.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR42xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR42xlargeElasticsearch = "r4.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeR42xlargeElasticsearch = "r4.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR44xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR44xlargeElasticsearch = "r4.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeR44xlargeElasticsearch = "r4.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR48xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR48xlargeElasticsearch = "r4.8xlarge.elasticsearch"
+	ESPartitionInstanceTypeR48xlargeElasticsearch = "r4.8xlarge.opensearch"
 
 	// ESPartitionInstanceTypeR416xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeR416xlargeElasticsearch = "r4.16xlarge.elasticsearch"
+	ESPartitionInstanceTypeR416xlargeElasticsearch = "r4.16xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI3LargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI3LargeElasticsearch = "i3.large.elasticsearch"
+	ESPartitionInstanceTypeI3LargeElasticsearch = "i3.large.opensearch"
 
 	// ESPartitionInstanceTypeI3XlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI3XlargeElasticsearch = "i3.xlarge.elasticsearch"
+	ESPartitionInstanceTypeI3XlargeElasticsearch = "i3.xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI32xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI32xlargeElasticsearch = "i3.2xlarge.elasticsearch"
+	ESPartitionInstanceTypeI32xlargeElasticsearch = "i3.2xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI34xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI34xlargeElasticsearch = "i3.4xlarge.elasticsearch"
+	ESPartitionInstanceTypeI34xlargeElasticsearch = "i3.4xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI38xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI38xlargeElasticsearch = "i3.8xlarge.elasticsearch"
+	ESPartitionInstanceTypeI38xlargeElasticsearch = "i3.8xlarge.opensearch"
 
 	// ESPartitionInstanceTypeI316xlargeElasticsearch is a ESPartitionInstanceType enum value
-	ESPartitionInstanceTypeI316xlargeElasticsearch = "i3.16xlarge.elasticsearch"
+	ESPartitionInstanceTypeI316xlargeElasticsearch = "i3.16xlarge.opensearch"
 )
 
 // ESPartitionInstanceType_Values returns all elements of the ESPartitionInstanceType enum
@@ -14357,10 +14357,10 @@ func ESPartitionInstanceType_Values() []string {
 
 const (
 	// ESWarmPartitionInstanceTypeUltrawarm1MediumElasticsearch is a ESWarmPartitionInstanceType enum value
-	ESWarmPartitionInstanceTypeUltrawarm1MediumElasticsearch = "ultrawarm1.medium.elasticsearch"
+	ESWarmPartitionInstanceTypeUltrawarm1MediumElasticsearch = "ultrawarm1.medium.opensearch"
 
 	// ESWarmPartitionInstanceTypeUltrawarm1LargeElasticsearch is a ESWarmPartitionInstanceType enum value
-	ESWarmPartitionInstanceTypeUltrawarm1LargeElasticsearch = "ultrawarm1.large.elasticsearch"
+	ESWarmPartitionInstanceTypeUltrawarm1LargeElasticsearch = "ultrawarm1.large.opensearch"
 )
 
 // ESWarmPartitionInstanceType_Values returns all elements of the ESWarmPartitionInstanceType enum

@@ -6648,7 +6648,7 @@ type CreateEndpointInput struct {
 	// The type of engine for the endpoint. Valid values, depending on the EndpointType
 	// value, include "mysql", "oracle", "postgres", "mariadb", "aurora", "aurora-postgresql",
 	// "redshift", "s3", "db2", "azuredb", "sybase", "dynamodb", "mongodb", "kinesis",
-	// "kafka", "elasticsearch", "docdb", "sqlserver", and "neptune".
+	// "kafka", "opensearch", "docdb", "sqlserver", and "neptune".
 	//
 	// EngineName is a required field
 	EngineName *string `type:"string" required:"true"`
@@ -11498,7 +11498,7 @@ type Endpoint struct {
 	// The database engine name. Valid values, depending on the EndpointType, include
 	// "mysql", "oracle", "postgres", "mariadb", "aurora", "aurora-postgresql",
 	// "redshift", "s3", "db2", "azuredb", "sybase", "dynamodb", "mongodb", "kinesis",
-	// "kafka", "elasticsearch", "documentdb", "sqlserver", and "neptune".
+	// "kafka", "opensearch", "documentdb", "sqlserver", and "neptune".
 	EngineName *string `type:"string"`
 
 	// Value returned by a call to CreateEndpoint that can be used for cross-account
@@ -13871,7 +13871,7 @@ type ModifyEndpointInput struct {
 	// The type of engine for the endpoint. Valid values, depending on the EndpointType,
 	// include "mysql", "oracle", "postgres", "mariadb", "aurora", "aurora-postgresql",
 	// "redshift", "s3", "db2", "azuredb", "sybase", "dynamodb", "mongodb", "kinesis",
-	// "kafka", "elasticsearch", "documentdb", "sqlserver", and "neptune".
+	// "kafka", "opensearch", "documentdb", "sqlserver", and "neptune".
 	EngineName *string `type:"string"`
 
 	// If this attribute is Y, the current call to ModifyEndpoint replaces all existing
@@ -20657,7 +20657,7 @@ type SupportedEndpointType struct {
 	// The database engine name. Valid values, depending on the EndpointType, include
 	// "mysql", "oracle", "postgres", "mariadb", "aurora", "aurora-postgresql",
 	// "redshift", "s3", "db2", "azuredb", "sybase", "dynamodb", "mongodb", "kinesis",
-	// "kafka", "elasticsearch", "documentdb", "sqlserver", and "neptune".
+	// "kafka", "opensearch", "documentdb", "sqlserver", and "neptune".
 	EngineName *string `type:"string"`
 
 	// The earliest DMS engine version that supports this endpoint engine. Note

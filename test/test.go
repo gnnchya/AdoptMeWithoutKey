@@ -36,8 +36,8 @@ type CreateAdoptionPostStruct struct {
 func main() {
 
 	sess, err := session.NewSession(&aws.Config{
-		Region:      aws.String("us-east-1"),
-		Credentials: credentials.NewStaticCredentials("", "", ""),
+		Region:      aws.String("ap-southeast-1"),
+		Credentials: credentials.NewEnvCredentials(),
 	})
 
 	svc := dynamodb.New(sess)
