@@ -19,7 +19,7 @@ func main() {
 	})
 
 	if err != nil {
-		log.Fatalf("Got error get new session: %s", err)
+		log.Println("Got error get new session: %s", err)
 	}
 
 	svc := dynamodb.New(sess)
@@ -46,7 +46,7 @@ func main() {
 
 	_, err = svc.CreateTable(input)
 	if err != nil {
-		log.Fatalf("error create table: %s", err)
+		log.Println("error create table: %s", err)
 	}
 
 	input = &dynamodb.CreateTableInput{
@@ -71,6 +71,6 @@ func main() {
 
 	_, err = svc.CreateTable(input)
 	if err != nil {
-		log.Fatalf("error create table: %s", err)
+		log.Println("error create table: %s", err)
 	}
 }

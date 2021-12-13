@@ -66,7 +66,7 @@ func (repo *Repository) CreateAdoptionPost(input domain.CreateAdoptionPostStruct
 	_, err := repo.Client.PutItem(item)
 
 	if err != nil {
-		log.Fatalf("Got error calling GetItem: %s", err)
+		log.Println("Got error calling GetItem: %s", err)
 	}
 	return err
 }
@@ -129,7 +129,7 @@ func (repo *Repository) CreateLostPetPost(input domain.CreateLostPetPostStruct) 
 	_, err := repo.Client.PutItem(item)
 
 	if err != nil {
-		log.Fatalf("Got error calling GetItem: %s", err)
+		log.Println("Got error calling GetItem: %s", err)
 	}
 	return err
 }

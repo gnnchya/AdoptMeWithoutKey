@@ -19,7 +19,7 @@ func (repo *Repository) queryAdoptionPost(ctx context.Context, buf bytes.Buffer)
 		ops.Search.WithPretty(),
 	)
 	if err != nil {
-		log.Fatalf("Error getting response: %s", err)
+		log.Println("Error getting response: %s", err)
 	}
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
@@ -30,9 +30,9 @@ func (repo *Repository) queryAdoptionPost(ctx context.Context, buf bytes.Buffer)
 	if res.IsError() {
 		var e map[string]interface{}
 		if err := json.NewDecoder(res.Body).Decode(&e); err != nil {
-			log.Fatalf("Error parsing the response body: %s", err)
+			log.Println("Error parsing the response body: %s", err)
 		} else {
-			log.Fatalf("[%s] %s: %s",
+			log.Println("[%s] %s: %s",
 				res.Status(),
 				e["error"].(map[string]interface{})["type"],
 				e["error"].(map[string]interface{})["reason"],
@@ -40,7 +40,7 @@ func (repo *Repository) queryAdoptionPost(ctx context.Context, buf bytes.Buffer)
 		}
 	}
 	if err := json.NewDecoder(res.Body).Decode(&r); err != nil {
-		log.Fatalf("Error parsing the response body: %s", err)
+		log.Println("Error parsing the response body: %s", err)
 	}
 	return r, err
 }
@@ -56,7 +56,7 @@ func (repo *Repository) queryLostPetPost(ctx context.Context, buf bytes.Buffer) 
 		ops.Search.WithPretty(),
 	)
 	if err != nil {
-		log.Fatalf("Error getting response: %s", err)
+		log.Println("Error getting response: %s", err)
 	}
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
@@ -67,9 +67,9 @@ func (repo *Repository) queryLostPetPost(ctx context.Context, buf bytes.Buffer) 
 	if res.IsError() {
 		var e map[string]interface{}
 		if err := json.NewDecoder(res.Body).Decode(&e); err != nil {
-			log.Fatalf("Error parsing the response body: %s", err)
+			log.Println("Error parsing the response body: %s", err)
 		} else {
-			log.Fatalf("[%s] %s: %s",
+			log.Println("[%s] %s: %s",
 				res.Status(),
 				e["error"].(map[string]interface{})["type"],
 				e["error"].(map[string]interface{})["reason"],
@@ -77,7 +77,7 @@ func (repo *Repository) queryLostPetPost(ctx context.Context, buf bytes.Buffer) 
 		}
 	}
 	if err := json.NewDecoder(res.Body).Decode(&r); err != nil {
-		log.Fatalf("Error parsing the response body: %s", err)
+		log.Println("Error parsing the response body: %s", err)
 	}
 	return r, err
 }

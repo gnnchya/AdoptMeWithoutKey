@@ -27,7 +27,7 @@ func buildSearchRequest(page int, size int, keyword string) bytes.Buffer {
 		},
 	}
 	if err := json.NewEncoder(&buf).Encode(query); err != nil {
-		log.Fatalf("Error encoding query: %s", err)
+		log.Println("Error encoding query: %s", err)
 	}
 	return buf
 }
@@ -84,7 +84,7 @@ func buildViewRequest(id string) bytes.Buffer {
 		},
 	}
 	if err := json.NewEncoder(&buf).Encode(query); err != nil {
-		log.Fatalf("Error encoding query: %s", err)
+		log.Println("Error encoding query: %s", err)
 	}
 	return buf
 }
@@ -109,7 +109,7 @@ func buildViewAllRequest(page int, size int, field string) bytes.Buffer {
 		},
 	}
 	if err := json.NewEncoder(&buf).Encode(query); err != nil {
-		log.Fatalf("Error encoding query: %s", err)
+		log.Println("Error encoding query: %s", err)
 	}
 	return buf
 }
@@ -138,7 +138,7 @@ func buildReadAllByAnimalTypeRequest(page int, size int, keyword string, field s
 		},
 	}
 	if err := json.NewEncoder(&buf).Encode(query); err != nil {
-		log.Fatalf("Error encoding query: %s", err)
+		log.Println("Error encoding query: %s", err)
 	}
 	return buf
 }

@@ -38,7 +38,7 @@ func (repo *Repository) Register(input domain.UserStruct) error {
 	_, err := repo.Client.PutItem(item)
 
 	if err != nil {
-		log.Fatalf("Got error calling GetItem: %s", err)
+		log.Println("Got error calling GetItem: %s", err)
 	}
 	return err
 }

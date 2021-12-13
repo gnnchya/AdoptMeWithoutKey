@@ -38,7 +38,7 @@ func (repo *Repository) UpdateAdoptionPost(ctx context.Context, title *domain.Cr
 			return err
 		} else {
 			// Print the response status and error information.
-			log.Fatalf("[%s] %s: %s",
+			log.Println("[%s] %s: %s",
 				res.Status(),
 				e["error"].(map[string]interface{})["type"],
 				e["error"].(map[string]interface{})["reason"],
@@ -49,7 +49,7 @@ func (repo *Repository) UpdateAdoptionPost(ctx context.Context, title *domain.Cr
 }
 
 func (repo *Repository) UpdateLostPetPost(ctx context.Context, title *domain.CreateLostPetPostStruct) error {
-	if state, err := repo.CheckExistAdoptionPostID(ctx, title.ID); err != nil {
+	if state, err := repo.CheckExistLostPetPostID(ctx, title.ID); err != nil {
 		return err
 	} else if state == false {
 		return fmt.Errorf("this ID does not exist")
@@ -77,7 +77,7 @@ func (repo *Repository) UpdateLostPetPost(ctx context.Context, title *domain.Cre
 			return err
 		} else {
 			// Print the response status and error information.
-			log.Fatalf("[%s] %s: %s",
+			log.Println("[%s] %s: %s",
 				res.Status(),
 				e["error"].(map[string]interface{})["type"],
 				e["error"].(map[string]interface{})["reason"],

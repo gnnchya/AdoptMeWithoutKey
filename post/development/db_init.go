@@ -114,7 +114,7 @@ func create(es *opensearch.Client) {
 		//res, err := es.Info()
 
 		if err != nil {
-			log.Fatalf("Error getting response: %s", err)
+			log.Println("Error getting response: %s", err)
 		}
 		err = res.Body.Close()
 		if err != nil {
@@ -145,7 +145,7 @@ func create(es *opensearch.Client) {
 		//res, err := es.Info()
 
 		if err != nil {
-			log.Fatalf("Error getting response: %s", err)
+			log.Println("Error getting response: %s", err)
 		}
 		err = res.Body.Close()
 		if err != nil {
@@ -166,7 +166,7 @@ func main() {
 	})
 
 	if err != nil {
-		log.Fatalf("Got error get new session: %s", err)
+		log.Println("Got error get new session: %s", err)
 	}
 
 	svc := dynamodb.New(sess)
@@ -230,7 +230,7 @@ func main() {
 		_, err = svc.PutItem(item)
 
 		if err != nil {
-			log.Fatalf("Got error calling GetItem: %s", err)
+			log.Println("Got error calling GetItem: %s", err)
 		}
 	}
 
@@ -292,7 +292,7 @@ func main() {
 		_, err = svc.PutItem(item)
 
 		if err != nil {
-			log.Fatalf("Got error calling GetItem: %s", err)
+			log.Println("Got error calling GetItem: %s", err)
 		}
 	}
 
@@ -312,7 +312,7 @@ func main() {
 		},
 	})
 	if err != nil {
-		log.Fatalf("Error creating the client: %s", err)
+		log.Println("Error creating the client: %s", err)
 	}
 	create(es)
 

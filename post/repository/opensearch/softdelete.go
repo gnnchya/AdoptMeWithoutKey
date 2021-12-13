@@ -37,7 +37,7 @@ func (repo *Repository) SoftDeleteLostPetPost(ctx context.Context, id string) er
 			return err
 		} else {
 			// Print the response status and error information.
-			log.Fatalf("[%s] %s: %s",
+			log.Println("[%s] %s: %s",
 				res.Status(),
 				e["error"].(map[string]interface{})["type"],
 				e["error"].(map[string]interface{})["reason"],
@@ -76,7 +76,7 @@ func (repo *Repository) SoftDeleteAdoptionPost(ctx context.Context, id string) e
 			return err
 		} else {
 			// Print the response status and error information.
-			log.Fatalf("[%s] %s: %s",
+			log.Println("[%s] %s: %s",
 				res.Status(),
 				e["error"].(map[string]interface{})["type"],
 				e["error"].(map[string]interface{})["reason"],
