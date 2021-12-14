@@ -2,7 +2,6 @@ package implement
 
 import (
 	"context"
-	"fmt"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 	"log"
 )
@@ -10,11 +9,11 @@ import (
 func (impl *implementation) UpdateAdoptionPost(ctx context.Context, input domain.CreateAdoptionPostStruct) error {
 	err := impl.dynamoDB.CreateAdoptionPost(input)
 	if err != nil {
-		fmt.Println("err2:", err)
+		log.Println("err2:", err)
 	}
 	err = impl.openSearch.UpdateAdoptionPost(ctx, &input)
 	if err != nil {
-		fmt.Println("err2:", err)
+		log.Println("err2:", err)
 	}
 	return err
 }

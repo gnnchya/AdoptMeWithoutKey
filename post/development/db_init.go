@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/tls"
 	"encoding/json"
-	"fmt"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -92,7 +91,7 @@ var lostPost = []domain.CreateLostPetPostStruct{
 func create(es *opensearch.Client) {
 	//var c *gin.Context
 	for k, v := range Post {
-		fmt.Println("p", Post[k].ID)
+		log.Println("p", Post[k].ID)
 		out, err := json.Marshal(v)
 		if err != nil {
 			panic(err)
@@ -123,7 +122,7 @@ func create(es *opensearch.Client) {
 
 	}
 	for k, v := range lostPost {
-		fmt.Println("p", lostPost[k].ID)
+		log.Println("p", lostPost[k].ID)
 		out, err := json.Marshal(v)
 		if err != nil {
 			panic(err)

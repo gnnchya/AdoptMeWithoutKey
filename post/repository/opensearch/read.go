@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
+	"log"
 )
 
 func (repo *Repository) ReadAdoptionPost(id string, ctx context.Context) (result domain.CreateAdoptionPostStruct, err error) {
@@ -13,9 +14,9 @@ func (repo *Repository) ReadAdoptionPost(id string, ctx context.Context) (result
 		return result, err
 	}
 	q, err := repo.queryAdoptionPost(ctx, buildViewRequest(id))
-	fmt.Println(q)
+	log.Println(q)
 	results := IntoAdoptionPostStruct(q)
-	fmt.Println(results[0])
+	log.Println(results[0])
 	return results[0], err
 }
 
@@ -26,8 +27,8 @@ func (repo *Repository) ReadLostPetPost(id string, ctx context.Context) (result 
 		return result, err
 	}
 	q, err := repo.queryLostPetPost(ctx, buildViewRequest(id))
-	fmt.Println(q)
+	log.Println(q)
 	results := IntoLostPetPostStruct(q)
-	fmt.Println(results[0])
+	log.Println(results[0])
 	return results[0], err
 }

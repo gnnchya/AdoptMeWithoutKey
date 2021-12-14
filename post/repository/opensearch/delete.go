@@ -21,7 +21,7 @@ func (repo *Repository) DeleteAdoptionPost(ctx context.Context, id string) error
 	}
 
 	res, err := req.Do(ctx, repo.Client)
-	fmt.Println("delete  :", res)
+	log.Println("delete  :", res)
 	if err != nil {
 		log.Println("Error getting response: %s", err)
 	}
@@ -48,7 +48,7 @@ func (repo *Repository) DeleteLostPetPost(ctx context.Context, id string) error 
 	}
 
 	res, err := req.Do(ctx, repo.Client)
-	fmt.Println("delete  :", res)
+	log.Println("delete  :", res)
 	if err != nil {
 		log.Println("Error getting response: %s", err)
 	}

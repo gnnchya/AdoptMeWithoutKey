@@ -2,8 +2,8 @@ package opensearch
 
 import (
 	"crypto/tls"
-	"fmt"
 	"github.com/opensearch-project/opensearch-go"
+	"log"
 	"net"
 	"net/http"
 	"time"
@@ -17,7 +17,7 @@ type Repository struct {
 
 func New(uri string, username string, password string, AdoptionPostIndex string, LostPetPostIndex string) (repo *Repository, err error) {
 
-	fmt.Println(uri, username, password)
+	log.Println(uri, username, password)
 	openSearchCli, err := opensearch.NewClient(opensearch.Config{
 		Addresses: []string{
 			uri,

@@ -2,10 +2,10 @@ package email
 
 import (
 	"crypto/tls"
-	"fmt"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/config"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/domain"
 	gomail "gopkg.in/mail.v2"
+	"log"
 )
 
 func SendAdoptEmail(email string, adopter domain.UserStruct) (err error) {
@@ -32,7 +32,7 @@ func SendAdoptEmail(email string, adopter domain.UserStruct) (err error) {
 
 	// Now send E-Mail
 	if err := d.DialAndSend(m); err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		return err
 	}
 	return nil
@@ -62,7 +62,7 @@ func SendFoundEmail(email string, founder domain.UserStruct) (err error) {
 
 	// Now send E-Mail
 	if err := d.DialAndSend(m); err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		return err
 	}
 	return nil

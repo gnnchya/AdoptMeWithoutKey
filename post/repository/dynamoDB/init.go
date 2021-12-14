@@ -1,16 +1,16 @@
 package dynamoDB
 
 import (
-	"fmt"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"log"
 )
 
-type Repository struct{
-	Client 	*dynamodb.DynamoDB
+type Repository struct {
+	Client *dynamodb.DynamoDB
 }
 
-func New(region string)(repo *Repository, err error) {
+func New(region string) (repo *Repository, err error) {
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
 		SharedConfigState: session.SharedConfigEnable,
 	}))
@@ -18,9 +18,9 @@ func New(region string)(repo *Repository, err error) {
 	//	Region:      aws.String(region),
 	//	Credentials: credentials.NewEnvCredentials(),
 	//})
-	fmt.Println("error cant connect to aws session:", err)
+	log.Println("error cant connect to aws session:", err)
 	svc := dynamodb.New(sess)
 	repo = &Repository{}
 	repo.Client = svc
-	return repo , err
+	return repo, err
 }

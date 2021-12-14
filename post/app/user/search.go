@@ -1,10 +1,10 @@
 package user
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/app/view"
 	"github.com/gnnchya/AdoptMeWithoutKey/post/service/user/userin"
+	"log"
 	"strconv"
 )
 
@@ -32,7 +32,7 @@ func (ctrl *Controller) SearchAdoptionPost(c *gin.Context) {
 	input.Page = page
 
 	value, err := ctrl.service.SearchAdoptionPost(c, input)
-	fmt.Println("value: ", value)
+	log.Println("value: ", value)
 	if err != nil {
 		view.MakeErrResp(c, 422, "error search")
 		return
@@ -64,7 +64,7 @@ func (ctrl *Controller) SearchLostPetPost(c *gin.Context) {
 	input.Page = page
 
 	value, err := ctrl.service.SearchLostPetPost(c, input)
-	fmt.Println("value: ", value)
+	log.Println("value: ", value)
 	if err != nil {
 		view.MakeErrResp(c, 422, "error search")
 		return

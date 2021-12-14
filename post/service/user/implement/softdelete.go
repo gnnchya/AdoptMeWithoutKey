@@ -2,7 +2,7 @@ package implement
 
 import (
 	"context"
-	"fmt"
+	"log"
 	"time"
 )
 
@@ -11,11 +11,11 @@ func (impl *implementation) SoftDeleteLostPetPost(ctx context.Context, id string
 	input.DeleteAt = time.Now().Unix()
 	err = impl.dynamoDB.CreateLostPetPost(input)
 	if err != nil {
-		fmt.Println("err2:", err)
+		log.Println("err2:", err)
 	}
 	err = impl.openSearch.SoftDeleteLostPetPost(ctx, input.ID)
 	if err != nil {
-		fmt.Println("err2:", err)
+		log.Println("err2:", err)
 	}
 	return err
 }
@@ -25,11 +25,11 @@ func (impl *implementation) SoftDeleteAdoptionPost(ctx context.Context, id strin
 	input.DeleteAt = time.Now().Unix()
 	err = impl.dynamoDB.CreateAdoptionPost(input)
 	if err != nil {
-		fmt.Println("err2:", err)
+		log.Println("err2:", err)
 	}
 	err = impl.openSearch.SoftDeleteAdoptionPost(ctx, input.ID)
 	if err != nil {
-		fmt.Println("err2:", err)
+		log.Println("err2:", err)
 	}
 	return err
 }
