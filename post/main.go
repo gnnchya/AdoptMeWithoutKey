@@ -35,7 +35,7 @@ func main() {
 	log := setupLog()
 	// Gin setup
 	router := gin.New()
-	gin.SetMode(gin.ReleaseMode)
+	//gin.SetMode(gin.ReleaseMode)
 	router.Use(ginLogRus.Logger(log), gin.Recovery())
 	//router.Use(cors.New(cors.Options{
 	//	AllowedOrigins: []string{"http://localhost:3000/"},
