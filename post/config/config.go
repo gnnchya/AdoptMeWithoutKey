@@ -20,7 +20,7 @@ type Config struct {
 	Email         string `env:"EMAIL" envDefault:""`
 	EmailPassword string `env:"EMAIL_PASSWORD" envDefault:""`
 
-	IP string `env:"IP" envDefault:""`
+	IP string `env:"REACT_APP_IP" envDefault:""`
 }
 
 func Get() *Config {
