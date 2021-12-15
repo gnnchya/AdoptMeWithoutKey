@@ -8,9 +8,9 @@ import (
 	//"net/http"
 )
 
-func CORSMiddleware() gin.HandlerFunc {
+func CORSMiddleware(ip string) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://18.140.154.104:3000")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://"+ip+":3000")
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		//c.Writer.Header().Set("Access-Control-Max-Age", "86400")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Accept, Origin, Cache-Control, X-Requested-With")
@@ -55,7 +55,7 @@ func main() {
 	//	AllowCredentials: true,
 	//}))
 
-	router.Use(CORSMiddleware())
+	router.Use(CORSMiddleware(appConfig.IP))
 	//router.Use(cors.New(cors.Config{
 	//	AllowOrigins:     []string{"https://foo.com"},
 	//	AllowMethods:     []string{"PUT", "PATCH"},
