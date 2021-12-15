@@ -11,7 +11,7 @@ import (
 func CORSMiddleware(ip string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// c.Writer.Header().Set("Access-Control-Allow-Origin", "http://"+ip+":3000")
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "AdoptMe-LB-1340134338.ap-southeast-1.elb.amazonaws.com")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://AdoptMe-LB-1340134338.ap-southeast-1.elb.amazonaws.com")
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		//c.Writer.Header().Set("Access-Control-Max-Age", "86400")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Accept, Origin, Cache-Control, X-Requested-With")
