@@ -6,7 +6,6 @@ import (
 	"github.com/gnnchya/AdoptMeWithoutKey/post/config"
 	ginLogRus "github.com/toorop/gin-logrus"
 	"log"
-	"net/http"
 	"time"
 	//"net/http"
 )
@@ -15,7 +14,7 @@ func CORSMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://18.140.154.104:3000")
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
-		c.Writer.Header().Set("Access-Control-Max-Age", "86400")
+		//c.Writer.Header().Set("Access-Control-Max-Age", "86400")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Accept, Origin, Cache-Control, X-Requested-With")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
 
@@ -26,11 +25,11 @@ func CORSMiddleware() gin.HandlerFunc {
 			c.Next()
 		}
 
-		c.Next()
+		//c.Next()
 
-		c.JSON(http.StatusOK, gin.H{
-			"message": "this response has custom headers",
-		})
+		//c.JSON(http.StatusOK, gin.H{
+		//	"message": "this response has custom headers",
+		//})
 	}
 }
 func init() { log.SetFlags(log.Lshortfile | log.LstdFlags) }
